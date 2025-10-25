@@ -19,10 +19,10 @@ ggplot(df, aes(x = Year, y = Item, fill = Item)) +
   theme(legend.position = "none")
 
 # 2
-ggplot(df, aes(x = Year, y = Item, fill = after_stat(x))) +
+ggplot(df, aes(x = Value, y = Item, fill = after_stat(x))) +
   geom_density_ridges_gradient(scale = 1.0, rel_min_height = 0.01) +
   scale_fill_viridis(option = "C") +
-  labs(title = 'Producer prices in agriculture of India: 2000-2023') +
+  labs(title = 'Producer prices in major agriculture products of India (USD$/Tonne): 2000-2023') +
     theme(
       legend.position="none",
       panel.spacing = unit(0.1, "lines"),
