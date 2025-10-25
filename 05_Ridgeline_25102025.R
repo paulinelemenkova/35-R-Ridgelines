@@ -1,0 +1,41 @@
+# Library
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+library(dplyr)
+library(forcats)
+
+df <- read_csv("FAOSTAT_Prices.csv")
+head(df)
+
+
+
+# library
+library(ggridges)
+library(ggplot2)
+ 
+# Diamonds dataset is provided by R natively
+#head(diamonds)
+ 
+# basic example
+ggplot(df, aes(x = Year, y = Item, fill = Item)) +
+  geom_density_ridges() +
+  theme_ridges() +
+  theme(legend.position = "none")
+
+
+
+# to extend a number of colors in RColorBrewer fixed palette
+nb.cols <- length(unique(df$Item))
+my_custom_colors <- colorRampPalette(brewer.pal(9, "Set1"))(nb.cols)
+
+p<- ggplot(data = df, aes(x = Value, y = Item, fill = Item)) +
+    geom_bar(stat="identity", alpha=1.0, width=.4) +
+    labs(title = "Economic output of agriculture sector in India: 2000-2023", x = "Gross Production Value (in current US $)", y = "Products") +
+    scale_x_continuous(labels = function(x) format(x, scientific = F, digits = 1)) +
+#   scale_fill_brewer(palette = "Set1") +
+    scale_fill_manual(values = my_custom_colors) +
+#    coord_flip() +
+#    xlab("") +
+    theme_grey()
+p
