@@ -1,3 +1,22 @@
+# ============================================================================
+# Ridgeline (density-ridge) plots of trench geomorphology in R (ggridges)
+#
+# R ridgeline-plotting technique used in the author's geospatial analysis:
+#   Lemenkova, P. (2019). Geospatial Analysis by Python and R: Geomorphology of
+#   the Philippine Trench, Pacific Ocean.
+#   Electronic Letters on Science and Engineering, 15(3), 81-94.
+#   DOI (Zenodo): https://doi.org/10.5281/zenodo.3592687
+#   figshare:     https://doi.org/10.6084/m9.figshare.11449362
+#   HAL:          https://hal.science/hal-02425688
+#   SSRN:         https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3509412
+#
+# Note: the cited article analyses the Philippine Trench. The example committed
+# in this script plots Mariana Trench data (Morphology.csv / Depths.csv); both
+# are Pacific Ocean trenches analysed with the same ridgeline technique.
+#
+# Author: Polina Lemenkova  |  ORCID: 0000-0002-5759-1089
+# ============================================================================
+
 # library
 library(ggridges)
 library(ggplot2)
